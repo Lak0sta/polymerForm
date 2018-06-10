@@ -1,0 +1,26 @@
+<!-- app.template.html -->
+<div class="container">
+  <my-tabs
+    on-home-tab-clicked="switchToHome"
+    on-feed-tab-clicked="switchToFeed"
+  ></my-tabs>
+  <template is="dom-if" if="{{activeHome}}">
+    <home-tab ></home-tab>
+  </template>
+  <template is="dom-if" if="{{activeFeed}}">
+    <feed-tab></feed-tab>
+    <posts-list></posts-list>
+  </template>
+  <my-top-bar on-reset-clicked="resetGame"></my-top-bar>
+  <my-top-message time="{{currentTime}}"></my-top-message>
+  <my-cards cards="{{cards}}" on-card-flipped="startGame" on-all-cards-matched="stopGame"></my-cards>
+  <template is="dom-if" if="{{isGameCompleted}}">
+      <my-pop-up-modal time="{{currentTime}}" on-reset-clicked="resetGame"></my-pop-up-modal>
+  </template>
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</div>

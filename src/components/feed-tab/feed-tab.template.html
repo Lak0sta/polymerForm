@@ -1,0 +1,53 @@
+<section class="feed">
+  <form class="feed__form form" on-submit="{{ formSubmit }}">
+    <div class="form__user user">
+      <div class="user__img"></div>
+      <span class="user__name">Peter Jackson</span>
+    </div>
+    <div class="form__textarea">
+      <textarea
+        placeholder="lorem ipsum dolot"
+        name="text"
+        id="text"
+        cols="30"
+        rows="10"
+        value="{{postMessage}}"
+      ></textarea>
+    </div>
+    <div class="form__button">
+      <button type="submit" on-click="changeMessage">Send</button>
+    </div>
+  </form>
+  <style>
+      .feed {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 30px;
+        border-bottom: 3px solid black;
+      }
+
+      .form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .form__user {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .form__button button {
+        width: 150px;
+      }
+
+      .user__img {
+        width: 150px;
+        height: 150px;
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2JRlLRMiucrN_0tdPEcrtdJZtJD47yxCzeYNgtcdWBE31UMJJ5w');
+        background-size: cover;
+        background-position: center;
+      }
+  </style>
+</section>
